@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-screen">
+        <!-- Top bar -->
+        <div class="top-bar">
+            <img src="assets/TopBarElements/List.png" alt="Left Arrow">
+            <img src="assets/TopBarElements/arrow_left.png" alt="Left Arrow">
+            <span class="spacer"></span>
+            <img src="assets/TopBarElements/Circle-1.png" alt="Three Dots">
+            <img src="assets/TopBarElements/Circle-2.png" alt="Three Dots">
+            <img src="assets/TopBarElements/Circle.png" alt="Three Dots">
+            <span class="spacer"></span>
+            <img src="assets/TopBarElements/arrow_right.png" alt="Right Arrow">
+            <img src="assets/TopBarElements/Map pin.png" alt="Left Arrow">
+
+        </div>
+
+        <!-- City Title Bar -->
+        <div class="title-bar">
+            <button class="edit-button">Edit</button>
+            <h1>Philadelphia</h1>
+            <img src="assets/Search.png" alt="Search Icon" class="icon">
+        </div>
+
+        <div class="weather-info">
+            <span class="spacer"></span>
+            <div class="left-column">
+                <h2 class="temperature">50°</h2>
+                <span class="spacer"></span>
+                <p class="high-low">Feels like <strong>40°</strong></p>
+                <p class="high-low">H: <strong>55°</strong> L: <strong>30°</strong></p>
+            </div>
+            <span class="spacer"></span>
+            <div class="right-column">
+                <div class="icon-row">
+                    <img src="assets/RainWind.png" alt="Rain and Wind Icon" class="weather-icon">
+                    <div class="precipitation-info">
+                        <p class="precipitation-label">Precipitation</p>
+                        <p class="precipitation-value"><strong>1"</strong></p>
+                    </div>
+                </div>
+                <p class="weather-description">Rain and Wind</p>
+            </div>
+            <span class="spacer"></span>
+        </div>
+        
+        <div class="main-area">
+            <!-- Row with Sunrise, Message, Sunset Cards -->
+            <div class="card-row">
+                <div class="card small-card">
+                    <div class="element-row">
+                        <img src="assets/Sunrise.png" alt="Sunrise Icon">
+                        <span class="spacer"></span>
+                        <p class="card-title">Sunrise</p>
+                    </div>
+                    <p class="time">7:06 AM</p>
+                </div>
+                <div class="card message-card">
+                    <div class="element-row">
+                        <div class="message-text">
+                            <p>Carry an umbrella</p>
+                            <p>Wear a raincoat</p>
+                        </div>
+                        <span class="spacer"></span>
+                        <img src="assets/Umbrella.png" alt="Umbrella Icon" class="umbrella-icon">
+                    </div>
+                </div>
+                <div class="card small-card">
+                    <div class="element-row">
+                        <img src="assets/Sunset.png" alt="Sunset Icon">
+                        <span class="spacer"></span>
+                        <p class="card-title">Sunset</p>
+                    </div>
+                    <p class="time">5:15 PM</p>
+                </div>
+            </div>
+
+            <!-- Hourly Forecast Card -->
+            <div class="hourly-forecast-card">
+                <div class="hourly-forecast-header">
+                    <img src="assets/history_toggle_off.png" alt="Time Icon" class="icon">
+                    <p class="forecast-title">HOURLY FORECAST</p>
+                    <p class="feels-like">FEELS LIKE</p>
+                </div>
+
+                <div class="scrollable-hourly">
+                    <!-- Hourly Info and Chart -->
+                    <div class="hourly-rows">
+                        <div class="hourly-column">
+                            <p>NOW</p>
+                            <img src="assets/Cloud rain.png" alt="Rain Icon">
+                            <p>10°</p>
+                            <p class="hourly-temp">8°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>10 AM</p>
+                            <img src="assets/Cloud rain.png" alt="Rain Icon">
+                            <p>10°</p>
+                            <p class="hourly-temp">8°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>11 AM</p>
+                            <img src="assets/Cloud rain.png" alt="Rain Icon">
+                            <p>12°</p>
+                            <p class="hourly-temp">10°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>12 PM</p>
+                            <img src="assets/Cloud.png" alt="Cloudy Icon">
+                            <p>15°</p>
+                            <p class="hourly-temp">13°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>1 PM</p>
+                            <img src="assets/Sun.png" alt="Sunny Icon">
+                            <p>18°</p>
+                            <p class="hourly-temp">16°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>2 PM</p>
+                            <img src="assets/Sun.png" alt="Sunny Icon">
+                            <p>20°</p>
+                            <p class="hourly-temp">18°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>3 PM</p>
+                            <img src="assets/Sun.png" alt="Sunny Icon">
+                            <p>22°</p>
+                            <p class="hourly-temp">19°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>4 PM</p>
+                            <img src="assets/Sun.png" alt="Sunny Icon">
+                            <p>22°</p>
+                            <p class="hourly-temp">19°</p>
+                        </div>
+                    </div>
+                    <div class="y-axis">
+                        <span>55°</span>
+                        <span>40°</span>
+                        <span>35°</span>
+                    </div>
+                    <div class="chart-container">
+                        <svg class="chart" viewBox="0 0 700 100">
+                            <line x1="0" y1="10" x2="1500" y2="10" class="y-line"></line>
+                            <line x1="0" y1="40" x2="1500" y2="40" class="y-line"></line>
+                            <line x1="0" y1="70" x2="1500" y2="70" class="y-line"></line>
+                            <path class="line actual" d="M0,70 L100,60 L200,50 L300,40 L400,35 L500,30 L600,40, L700,40"></path>
+                            <path class="line feels-like" d="M0,80 L100,70 L200,60 L300,55 L400,50 L500,45 L600,40, L700,40"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- 3-Day Forecast Card -->
+            <div class="three-day-forecast">
+                <div class="three-day-header">
+                    <img src="assets/calendar_month.png" alt="Calendar Icon" class="icon">
+                    <p class="forecast-title">3-DAY FORECAST</p>
+                </div>
+                <div class="day-row">
+                    <p class="day-title">Today</p>
+                    <img src="assets/Cloud rain.png" alt="Rain Icon" class="forecast-icon">
+                    <p class="weather-desc">Rainy</p>
+                    <p class="temperature">L: <strong>19°</strong> <span class="temp-gap"></span>H: <strong>46°</strong></p>
+                </div>
+                <div class="day-row">
+                    <p class="day-title">Thursday</p>
+                    <img src="assets/Cloud.png" alt="Cloud Icon" class="forecast-icon">
+                    <p class="weather-desc">Cloudy</p>
+                    <p class="temperature">L: <strong>19°</strong> <span class="temp-gap"></span> H: <strong>46°</strong></p>
+                </div>
+                <div class="day-row">
+                    <p class="day-title">Friday</p>
+                    <img src="assets/Sun.png" alt="Sunny Icon" class="forecast-icon">
+                    <p class="weather-desc">Sunny</p>
+                    <p class="temperature"><strong>L: 19°</strong> <span class="temp-gap"></span> <strong>H: 46°</strong></p>
+                </div>
+            </div>
+
+            <!-- Metrics Cards -->
+            <div class="card-row">
+                <div class="card metric-card">
+                    <p>AIR QUALITY</p>
+                    <p class="metric">30</p>
+                    <p>GOOD</p>
+                </div>
+                <div class="card metric-card">
+                    <p>UV INDEX</p>
+                    <p class="metric">1</p>
+                    <p>LOW</p>
+                </div>
+                <div class="card metric-card">
+                    <p>WIND</p>
+                    <p class="metric">8</p>
+                    <p>MPH</p>
+                </div>
+                <div class="card metric-card">
+                    <p>HUMIDITY</p>
+                    <p class="metric">45%</p>
+                    <p>IDEAL</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
