@@ -10,7 +10,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* background: linear-gradient(to bottom, #2C4366, #B8CAE5); */
     font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, "San Francisco", Helvetica, Arial, sans-serif;
     color: white;
     
@@ -23,7 +22,6 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     background: linear-gradient(to bottom, #2C4366, #B8CAE5);
     border-radius: 20px;
-    /* background: inherit; */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -65,7 +63,6 @@ body {
     border-color: black;
 }
 
-/* Active: Keep the inverted colors when clicked */
 .edit-button.active {
     background: white;
     color: black;
@@ -150,7 +147,6 @@ body {
 }
 
 /* STARTING TOP SECTION */
-
 
 .weather-info {
     display: flex;
@@ -452,14 +448,11 @@ svg {
     justify-content: center;
     align-content: center;
     cursor: pointer;
-    /* Center text inside button */
     display: none;
     align-items: center;
     justify-content: center;
     padding:0px;
     margin: 0px;
-
-    /* Smooth transition */
     transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -469,17 +462,17 @@ svg {
 }
 
 .card {
-    position: relative; /* Required for absolute positioning of delete button */
+    position: relative;
 }
 
 .city-menu {
     position: absolute;
-    top: 30px; /* Adjust as needed */
+    top: 30px; 
     left: 30px;
     background: rgba(14, 26, 35, 0.9);
     border-radius: 10px;
     padding: 10px;
-    display: none; /* Initially hidden */
+    display: none; 
     flex-direction: column;
     gap: 5px;
     width: 120px;
@@ -515,13 +508,13 @@ svg {
 
 .search-box {
     background: rgb(101, 111, 128);
-    border: 1px solid white; /* Changed from border-color to ensure it applies */
+    border: 1px solid white; 
     padding: 20px;
     border-radius: 10px;
     width: 250px;
     text-align: center;
     position: relative;
-    align-items: center; /* Ensures everything inside is centered */
+    align-items: center;
 
 }
 
@@ -578,7 +571,7 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none; /* Initially hidden */
+    display: none;
 }
 
 /* Map Box */
@@ -587,7 +580,7 @@ svg {
     border: 1px solid white;
     padding: 20px;
     border-radius: 10px;
-    width: 280px; /* Adjust width */
+    width: 280px;
     text-align: center;
     position: relative;
     display: flex;
