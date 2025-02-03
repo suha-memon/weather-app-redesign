@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="main-screen">
+        <!-- Top bar -->
+        <div class="top-bar">
+            <div class="city-menu">
+                <p class="city-option" data-city="Philadelphia">Philadelphia</p>
+                <p class="city-option" data-city="Boston">Boston</p>
+                <p class="city-option" data-city="Manhattan">Manhattan</p>
+            </div>
+            <img src="assets/TopBarElements/List.png" alt="List" id="list-button">
+            <img src="assets/TopBarElements/arrow_left.png" alt="Left Arrow">
+            <span class="spacer"></span>
+            <img src="assets/TopBarElements/Circle-1.png" alt="Three Dots">
+            <img src="assets/TopBarElements/Circle-2.png" alt="Three Dots">
+            <img src="assets/TopBarElements/Circle.png" alt="Three Dots">
+            <span class="spacer"></span>
+            <img src="assets/TopBarElements/arrow_right.png" alt="Right Arrow">
+            <img src="assets/TopBarElements/Map pin.png" alt="Location Icon" id="location-button">
+        </div>
+
+        <!-- City Title Bar -->
+        <div class="title-bar">
+            <button class="edit-button">Edit</button>
+            <h1 id="city-name">Philadelphia</h1>
+            <img src="assets/Search.png" alt="Search Icon" class="icon">
+        </div>
+
+        <div class="weather-info">
+            <span class="spacer"></span>
+            <div class="left-column">
+                <h2 class="temperature" id="temperature">50°</h2> <!-- Added id="temperature" -->
+                <span class="spacer"></span>
+                <p class="high-low">Feels like <strong id="feels-like">40°</strong></p> <!-- Added id="feels-like" -->
+                <p class="high-low">H: <strong id="high-temp">50°</strong> L: <strong id="low-temp">30°</strong></p> <!-- Added ids -->
+            </div>
+            <span class="spacer"></span>
+            <div class="right-column">
+                <div class="icon-row">
+                    <img src="assets/RainWind.png" alt="Rain and Wind Icon" class="weather-icon" id="weather-icon"> <!-- Added id="weather-icon" -->
+                    <div class="precipitation-info">
+                        <p class="precipitation-label">Precipitation</p>
+                        <p class="precipitation-value"><strong id="precipitation">1"</strong></p> <!-- Added id="precipitation" -->
+                    </div>
+                </div>
+                <p class="weather-description" id="weather-description">Rain and Wind</p> <!-- Added id="weather-description" -->
+            </div>
+            <span class="spacer"></span>
+        </div>
+        
+        <div class="main-area">
+            <!-- Row with Sunrise, Message, Sunset Cards -->
+            <div class="card-row">
+                <div class="card small-card">
+                    <button class="delete-button">-</button>
+                    <div class="element-row">
+                        <img src="assets/Sunrise.png" alt="Sunrise Icon">
+                        <span class="spacer"></span>
+                        <p class="card-title">Sunrise</p>
+                    </div>
+                    <p class="time">7:06 AM</p>
+                </div>
+                <div class="card message-card">
+                    <button class="delete-button">-</button>
+                    <div class="element-row">
+                        <div class="message-text">
+                            <p>Carry an umbrella</p>
+                            <p>Wear a raincoat</p>
+                        </div>
+                        <span class="spacer"></span>
+                        <img src="assets/Umbrella.png" alt="Umbrella Icon" class="umbrella-icon">
+                    </div>
+                </div>
+                <div class="card small-card">
+                    <button class="delete-button">-</button>
+                    <div class="element-row">
+                        <img src="assets/Sunset.png" alt="Sunset Icon">
+                        <span class="spacer"></span>
+                        <p class="card-title">Sunset</p>
+                    </div>
+                    <p class="time">5:15 PM</p>
+                </div>
+            </div>
+
+            <!-- Hourly Forecast Card -->
+            <div class="card hourly-forecast-card">
+                <button class="delete-button">-</button>
+                <div class="hourly-forecast-header">
+                    <img src="assets/history_toggle_off.png" alt="Time Icon" class="icon">
+                    <p class="forecast-title">HOURLY FORECAST</p>
+                    <p class="feels-like">FEELS LIKE</p>
+                </div>
+
+                <div class="scrollable-hourly">
+                    <!-- Hourly Info and Chart -->
+                    <div class="hourly-rows">
+                        <div class="hourly-column">
+                            <p>NOW</p>
+                            <img src="assets/Cloud rain.png" alt="Rain Icon">
+                            <p>50°</p>
+                            <p class="hourly-temp">40°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>10 AM</p>
+                            <img src="assets/Cloud rain.png" alt="Rain Icon">
+                            <p>40°</p>
+                            <p class="hourly-temp">35°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>11 AM</p>
+                            <img src="assets/Cloud rain.png" alt="Rain Icon">
+                            <p>38°</p>
+                            <p class="hourly-temp">35°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>12 PM</p>
+                            <img src="assets/Cloud.png" alt="Cloudy Icon">
+                            <p>45°</p>
+                            <p class="hourly-temp">38°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>1 PM</p>
+                            <img src="assets/Sun.png" alt="Sunny Icon">
+                            <p>43°</p>
+                            <p class="hourly-temp">31°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>2 PM</p>
+                            <img src="assets/Sun.png" alt="Sunny Icon">
+                            <p>47°</p>
+                            <p class="hourly-temp">34°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>3 PM</p>
+                            <img src="assets/Sun.png" alt="Sunny Icon">
+                            <p>45°</p>
+                            <p class="hourly-temp">35°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>4 PM</p>
+                            <img src="assets/Sun.png" alt="Sunny Icon">
+                            <p>48°</p>
+                            <p class="hourly-temp">32°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>5 PM</p>
+                            <img src="assets/Cloud rain.png" alt="Rain Icon">
+                            <p>40°</p>
+                            <p class="hourly-temp">35°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>6 pM</p>
+                            <img src="assets/Cloud rain.png" alt="Rain Icon">
+                            <p>38°</p>
+                            <p class="hourly-temp">35°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>7 PM</p>
+                            <img src="assets/Cloud.png" alt="Cloudy Icon">
+                            <p>45°</p>
+                            <p class="hourly-temp">38°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>8 PM</p>
+                            <img src="assets/Sun.png" alt="Sunny Icon">
+                            <p>43°</p>
+                            <p class="hourly-temp">31°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>9 PM</p>
+                            <img src="assets/Sun.png" alt="Sunny Icon">
+                            <p>47°</p>
+                            <p class="hourly-temp">34°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>10 PM</p>
+                            <img src="assets/Sun.png" alt="Sunny Icon">
+                            <p>45°</p>
+                            <p class="hourly-temp">35°</p>
+                        </div>
+                        <div class="hourly-column">
+                            <p>11 PM</p>
+                            <img src="assets/Sun.png" alt="Sunny Icon">
+                            <p>48°</p>
+                            <p class="hourly-temp">32°</p>
+                        </div>
+                    </div>
+                    <div class="y-axis">
+                        <span>50°</span>
+                        <span>40°</span>
+                        <span>30°</span>
+                    </div>
+                    <div class="chart-container">
+                        <svg class="chart" viewBox="0 0 1350 90">
+                            <line x1="0" y1="10" x2="1300" y2="10" class="y-line"></line>
+                            <line x1="0" y1="40" x2="1300" y2="40" class="y-line"></line>
+                            <line x1="0" y1="70" x2="1300" y2="70" class="y-line"></line>
+                            <path class="line actual" d="M0,10 L100,40 L200,45 L300,25 L400,28 L500,25 L600,30 L700,20 L800,10 L900,40 L1000,45 L1100,25 L1200,28 L1300,25 L1400"></path>
+                            <path class="line feels-like" d="M0,40 L100,60 L200,60 L300,50 L400,65 L500,56 L600,55 L700,60 L800,40 L900,60 L1000,60 L1100,50 L1200,65 L1300,56 L1400"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- 3-Day Forecast Card -->
+            <div class="card three-day-forecast">
+                <button class="delete-button">-</button>
+                <div class="three-day-header">
+                    <img src="assets/calendar_month.png" alt="Calendar Icon" class="icon">
+                    <p class="forecast-title">3-DAY FORECAST</p>
+                </div>
+                <div class="day-row">
+                    <p class="day-title">Today</p>
+                    <img src="assets/Cloud rain.png" alt="Rain Icon" class="forecast-icon">
+                    <p class="weather-desc">Rainy</p>
+                    <p class="temperature">L: <strong>30°</strong> <span class="temp-gap"></span>H: <strong>50°</strong></p>
+                </div>
+                <div class="day-row">
+                    <p class="day-title">Thursday</p>
+                    <img src="assets/Cloud.png" alt="Cloud Icon" class="forecast-icon">
+                    <p class="weather-desc">Cloudy</p>
+                    <p class="temperature">L: <strong>35°</strong> <span class="temp-gap"></span> H: <strong>56°</strong></p>
+                </div>
+                <div class="day-row">
+                    <p class="day-title">Friday</p>
+                    <img src="assets/Sun.png" alt="Sunny Icon" class="forecast-icon">
+                    <p class="weather-desc">Sunny</p>
+                    <p class="temperature"><strong>L: 40°</strong> <span class="temp-gap"></span> <strong>H: 60°</strong></p>
+                </div>
+            </div>
+
+            <!-- Metrics Cards -->
+            <div class="card-row">
+                <div class="card metric-card">
+                    <button class="delete-button">-</button>
+                    <p>AIR QUALITY</p>
+                    <p class="metric">30</p>
+                    <p>GOOD</p>
+                </div>
+                <div class="card metric-card">
+                    <button class="delete-button">-</button>
+                    <p>UV INDEX</p>
+                    <p class="metric">1</p>
+                    <p>LOW</p>
+                </div>
+                <div class="card metric-card">
+                    <button class="delete-button">-</button>
+                    <p>WIND</p>
+                    <p class="metric">8</p>
+                    <p>MPH</p>
+                </div>
+                <div class="card metric-card">
+                    <button class="delete-button">-</button>
+                    <p>HUMIDITY</p>
+                    <p class="metric">45%</p>
+                    <p>IDEAL</p>
+                </div>
+            </div>
+        </div>
+        <div class="search-modal">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search for a city..." />
+                <div class="search-results"></div>
+                <button class="close-modal">Close</button>
+            </div>
+        </div>
+        <div class="map-modal">
+            <div class="map-box">
+                <h2 id="map-title">Location</h2>
+                <img src="assets/maps/Philadelphia.png" alt="Map" id="map-image">
+                <button class="close-map-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Define variables once at the top
+            const listButton = document.getElementById("list-button");
+            const cityMenu = document.querySelector(".city-menu");
+            const cityOptions = document.querySelectorAll(".city-option");
+            const cityName = document.getElementById("city-name");
+    
+            // Weather info elements
+            const temperature = document.getElementById("temperature");
+            const feelsLike = document.getElementById("feels-like");
+            const highTemp = document.getElementById("high-temp");
+            const lowTemp = document.getElementById("low-temp");
+            const weatherDescription = document.getElementById("weather-description");
+            const precipitation = document.getElementById("precipitation");
+            const weatherIcon = document.getElementById("weather-icon");
+    
+            // Edit Button and Delete Buttons
+            const editButton = document.querySelector(".edit-button");
+            const deleteButtons = document.querySelectorAll(".delete-button");
+    
+            // Search modal elements
+            const searchButton = document.querySelector(".icon"); // Search button
+            const searchModal = document.querySelector(".search-modal");
+            const closeModal = document.querySelector(".close-modal");
+            const searchInput = document.getElementById("search-input");
+            const searchResults = document.querySelector(".search-results");
+    
+            const locationButton = document.getElementById("location-button");
+            const mapModal = document.querySelector(".map-modal");
+            const closeMapModal = document.querySelector(".close-map-modal");
+            const mapTitle = document.getElementById("map-title");
+            const mapImage = document.getElementById("map-image");
+
+            // Available cities
+            const availableCities = ["Philadelphia", "Boston", "Manhattan"];
+    
+            // Weather data for each city
+            const weatherData = {
+                "Philadelphia": {
+                    temperature: "50°",
+                    feelsLike: "40°",
+                    high: "50°",
+                    low: "30°",
+                    description: "Rain and Wind",
+                    precipitation: '1"',
+                    icon: "assets/RainWind.png"
+                },
+                "Boston": {
+                    temperature: "42°",
+                    feelsLike: "35°",
+                    high: "45°",
+                    low: "28°",
+                    description: "Cloudy",
+                    precipitation: '0.5"',
+                    icon: "assets/Cloud.png"
+                },
+                "Manhattan": {
+                    temperature: "55°",
+                    feelsLike: "50°",
+                    high: "58°",
+                    low: "40°",
+                    description: "Sunny",
+                    precipitation: '0"',
+                    icon: "assets/Sun.png"
+                }
+            };
+            const cityMaps = {
+                "Philadelphia": "assets/maps/Philadelphia.png",
+                "Boston": "assets/maps/Boston.png",
+                "Manhattan": "assets/maps/Manhattan.png"
+            };
+    
+            // Toggle city menu visibility when list button is clicked
+            listButton.addEventListener("click", function () {
+                cityMenu.style.display = cityMenu.style.display === "flex" ? "none" : "flex";
+            });
+    
+            // Update city and weather info when an option is clicked
+            cityOptions.forEach(option => {
+                option.addEventListener("click", function () {
+                    const selectedCity = option.getAttribute("data-city");
+                    updateWeather(selectedCity);
+                    cityMenu.style.display = "none"; // Hide menu after selection
+                });
+            });
+    
+            // Hide menu if user clicks outside
+            document.addEventListener("click", function (event) {
+                if (!cityMenu.contains(event.target) && event.target !== listButton) {
+                    cityMenu.style.display = "none";
+                }
+            });
+    
+            // Edit button logic
+            editButton.addEventListener("click", function () {
+                editButton.classList.toggle("active");
+                deleteButtons.forEach(button => {
+                    button.style.display = button.style.display === "block" ? "none" : "block";
+                });
+            });
+    
+            // ========= SEARCH FUNCTIONALITY =========
+            
+            // Open search modal when search button is clicked
+            searchButton.addEventListener("click", function () {
+                searchModal.style.display = "flex";
+                searchInput.value = ""; // Clear previous search
+                searchResults.innerHTML = ""; // Clear previous results
+            });
+    
+            // Close search modal when clicking the close button
+            closeModal.addEventListener("click", function () {
+                searchModal.style.display = "none";
+            });
+    
+            // Search function - Filters available cities as user types
+            searchInput.addEventListener("input", function () {
+                const query = searchInput.value.toLowerCase();
+                searchResults.innerHTML = ""; // Clear previous results
+    
+                const filteredCities = availableCities.filter(city => 
+                    city.toLowerCase().includes(query)
+                );
+    
+                // Display results
+                filteredCities.forEach(city => {
+                    const cityElement = document.createElement("p");
+                    cityElement.textContent = city;
+                    cityElement.addEventListener("click", function () {
+                        updateWeather(city); // Select city and update weather
+                        searchModal.style.display = "none"; // Close modal
+                    });
+                    searchResults.appendChild(cityElement);
+                });
+    
+                if (filteredCities.length === 0) {
+                    searchResults.innerHTML = "<p>No results found</p>";
+                }
+            });
+    
+            // Close search modal when clicking outside the search box
+            searchModal.addEventListener("click", function (event) {
+                    if (!event.target.closest(".search-box")) {
+                        searchModal.style.display = "none";
+                    }
+                });
+                locationButton.addEventListener("click", function () {
+                const selectedCity = cityName.textContent;
+
+                if (cityMaps[selectedCity]) {
+                    mapTitle.textContent = `Location: ${selectedCity}`;
+                    mapImage.src = cityMaps[selectedCity];
+                    mapModal.style.display = "flex";
+                }
+            });
+            closeMapModal.addEventListener("click", function () {
+                mapModal.style.display = "none";
+            });
+            mapModal.addEventListener("click", function (event) {
+                if (!event.target.closest(".map-box")) {
+                    mapModal.style.display = "none";
+                }
+            });
+    
+            // ========= FUNCTION TO UPDATE WEATHER =========
+            function updateWeather(selectedCity) {
+                cityName.textContent = selectedCity; // Update city name
+                const data = weatherData[selectedCity];
+    
+                // Update weather details
+                temperature.textContent = data.temperature;
+                feelsLike.textContent = data.feelsLike;
+                highTemp.textContent = data.high;
+                lowTemp.textContent = data.low;
+                weatherDescription.textContent = data.description;
+                precipitation.textContent = data.precipitation;
+                weatherIcon.src = data.icon;
+            }
+
+
+        });
+    </script>
+    
+
+
+</body>
+</html>
