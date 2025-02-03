@@ -217,23 +217,23 @@
                     <img src="assets/calendar_month.png" alt="Calendar Icon" class="icon">
                     <p class="forecast-title">3-DAY FORECAST</p>
                 </div>
-                <div class="day-row">
+                <div class="day-row" id="day-1">
                     <p class="day-title">Today</p>
                     <img src="assets/Cloud rain.png" alt="Rain Icon" class="forecast-icon">
                     <p class="weather-desc">Rainy</p>
                     <p class="temperature">L: <strong>30°</strong> <span class="temp-gap"></span>H: <strong>50°</strong></p>
                 </div>
-                <div class="day-row">
+                <div class="day-row" id="day-2">
                     <p class="day-title">Thursday</p>
                     <img src="assets/Cloud.png" alt="Cloud Icon" class="forecast-icon">
                     <p class="weather-desc">Cloudy</p>
-                    <p class="temperature">L: <strong>35°</strong> <span class="temp-gap"></span> H: <strong>56°</strong></p>
+                    <p class="temperature">L: <strong>35°</strong> <span class="temp-gap"></span>H: <strong>56°</strong></p>
                 </div>
-                <div class="day-row">
+                <div class="day-row" id="day-3">
                     <p class="day-title">Friday</p>
                     <img src="assets/Sun.png" alt="Sunny Icon" class="forecast-icon">
                     <p class="weather-desc">Sunny</p>
-                    <p class="temperature"><strong>L: 40°</strong> <span class="temp-gap"></span> <strong>H: 60°</strong></p>
+                    <p class="temperature">L: <strong>40°</strong> <span class="temp-gap"></span>H: <strong>60°</strong></p>
                 </div>
             </div>
 
@@ -327,7 +327,12 @@
                     low: "30°",
                     description: "Rain and Wind",
                     precipitation: '1"',
-                    icon: "assets/RainWind.png"
+                    icon: "assets/RainWind.png",
+                    threeDayForecast: [
+                        { day: "Today", icon: "assets/Cloud rain.png", desc: "Rainy", low: "30°", high: "50°" },
+                        { day: "Thursday", icon: "assets/Sun.png", desc: "Cloudy", low: "35°", high: "56°" },
+                        { day: "Friday", icon: "assets/Sun.png", desc: "Sunny", low: "40°", high: "60°" }
+                    ]
                 },
                 "Boston": {
                     temperature: "42°",
@@ -336,7 +341,12 @@
                     low: "28°",
                     description: "Cloudy",
                     precipitation: '0.5"',
-                    icon: "assets/Cloud.png"
+                    icon: "assets/Cloud.png",
+                    threeDayForecast: [
+                        { day: "Today", icon: "assets/Sun.png", desc: "Sunny", low: "36°", high: "55°" },
+                        { day: "Thursday", icon: "assets/Cloud rain.png", desc: "Rainy", low: "32°", high: "52°" },
+                        { day: "Friday", icon: "assets/Sun.png", desc: "Sunny", low: "37°", high: "58°" }
+                    ]
                 },
                 "Manhattan": {
                     temperature: "55°",
@@ -345,7 +355,13 @@
                     low: "40°",
                     description: "Sunny",
                     precipitation: '0"',
-                    icon: "assets/Sun.png"
+                    icon: "assets/Sun.png",
+                    threeDayForecast: [
+                        { day: "Today", icon: "assets/Cloud.png", desc: "Cloudy", low: "42°", high: "60°" },
+                        { day: "Thursday", icon: "assets/Sun.png", desc: "Sunny", low: "45°", high: "65°" },
+                        { day: "Friday", icon: "assets/Sun.png", desc: "Sunny", low: "44°", high: "62°" }
+                    ]
+                    
                 }
             };
             const cityMaps = {
@@ -459,6 +475,32 @@
                 weatherDescription.textContent = data.description;
                 precipitation.textContent = data.precipitation;
                 weatherIcon.src = data.icon;
+
+
+                // **Update 3-Day Forecast**
+                for (let i = 0; i < data.threeDayForecast.length; i++) {
+                    const dayRow = document.getElementById(`day-${i + 1}`);
+                    
+                    if (dayRow) {
+                        console.log(`Updating 3-day forecast for: ${data.threeDayForecast[i].day}`);
+
+                        dayRow.querySelector(".day-title").textContent = data.threeDayForecast[i].day;
+                        dayRow.querySelector(".forecast-icon").src = data.threeDayForecast[i].icon;
+                        dayRow.querySelector(".weather-desc").textContent = data.threeDayForecast[i].desc;
+
+                        // Correct way to update temperature (low/high)
+                        const tempStrong = dayRow.querySelectorAll(".temperature strong");
+                        if (tempStrong.length >= 2) {
+                            tempStrong[0].textContent = data.threeDayForecast[i].low;
+                            tempStrong[1].textContent = data.threeDayForecast[i].high;
+                        } else {
+                            console.error(`Temperature strong elements missing in day-${i + 1}`);
+                        }
+
+                    } else {
+                        console.error(`day-${i + 1} div is missing!`);
+                    }
+                }
             }
 
 
